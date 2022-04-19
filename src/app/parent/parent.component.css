@@ -1,0 +1,14 @@
+.parent{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.parentInfo{
+    background-color: rgb(133, 118, 147);
+    color:black;
+    text-align: center;
+
+}
+strong{
+    display: block;
+}

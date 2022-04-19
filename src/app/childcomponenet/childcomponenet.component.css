@@ -1,0 +1,13 @@
+.child{
+    background-color: black;
+    margin-top: 100px;
+    text-align:center;
+
+}
+.childInfo{
+    background-color: brown;
+     text-align:center;
+}
+strong{
+    display: block;
+}

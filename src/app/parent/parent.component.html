@@ -1,0 +1,16 @@
+<div class="parent">
+    <h1>Parent Component</h1>
+    <form #formInfo="ngForm" (ngSubmit)="onClickSubmit(formInfo)" >
+      <input type="text" name="input" ngModel>
+      <input type="submit">
+    </form>
+    </div>
+    <div class="parentInfo">
+      <h1>Change By Parent</h1>
+    <p><strong *ngFor="let i of fruits" >{{i}}</strong></p>
+    </div>
+    <div class="parentInfo">
+      <h1>Change By Child</h1>
+    <p><strong *ngFor="let i of child" >{{i}}</strong></p>
+    </div>
+    <app-childcomponenet [parentFormInfo]="fruits"  (fruits)="addParent($event)" ></app-childcomponenet>

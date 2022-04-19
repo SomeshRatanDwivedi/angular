@@ -1,0 +1,39 @@
+<div class="template form">
+    <h1>Template Driven Form</h1>
+    <form #userInfo="ngForm" (ngSubmit)="onSubmit(userInfo.value)">
+     <label for="">Name:</label>
+     <input type="text" name="userName" #yourName="ngModel" required placeholder="Enter Your Name" ngModel><br>
+     <p class="error" *ngIf="yourName.touched && yourName.invalid" >Please Enter Your Name</p>
+     <label for="">Email:</label>
+     <input type="email" name="userEmail" #yourEmail="ngModel" required placeholder="Enter Your Name" ngModel><br>
+     <p class="error" *ngIf="yourEmail.touched && yourEmail.invalid" >Please Enter Correct Email</p>
+     <label for="">Phone:</label>
+     <input type="text" name="userPhone" #yourPhone="ngModel" minlength="9" maxlength="12" required placeholder="Enter Your Name" ngModel><br>
+     <p class="error" *ngIf="yourPhone.touched && yourPhone.invalid" >Please Enter Correct Phone No.</p>
+     <input type="submit">
+   </form>
+</div>
+<div class="output" *ngIf="userInfo.valid">
+    <h1>Template Form Output</h1>
+    <h2 >Name:  {{template.userName}}</h2>
+    <h2>Email:  {{template.userEmail}}</h2>
+    <h2>Phone:  {{template.userPhone}}</h2>
+</div>
+<div class="template form">
+    <h1>Model Driven Form</h1>
+    <form [formGroup]="formdata">
+     <label for="">Name:</label>
+     <input type="text" formControlName="userName"placeholder="Enter Your Name" ngModel><br>
+     <label for="">Email:</label>
+     <input type="email" formControlName="userEmail"  placeholder="Enter Your Name" ngModel><br>
+     <label for="">Phone:</label>
+     <input type="text" formControlName="userPhone"  minlength="9" maxlength="12" required placeholder="Enter Your Name" ngModel><br>
+     <input type="submit">
+   </form>
+</div>
+<div class="output" *ngIf="formdata.valid">
+    <h1>Model Form Output</h1>
+    <h2 >Name:  {{formdata.value.userName}}</h2>
+    <h2>Email:  {{formdata.value.userEmail}}</h2>
+    <h2>Phone:  {{formdata.value.userPhone}}</h2>
+</div>

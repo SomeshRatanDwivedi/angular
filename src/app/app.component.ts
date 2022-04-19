@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularpoc';
+  fruits:string[]=[];
+  child:string[]=[];
+addParent(ele:any){
+  this.child.push(ele);
+}
+  onClickSubmit(ele:any){
+   this.fruits.push(ele.value.input);
+  }
 }
