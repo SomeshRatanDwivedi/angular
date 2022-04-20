@@ -10,7 +10,6 @@ import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http'; 
 import { HeroService } from './hero.service';
-import { WeatherComponent } from './weather/weather.component';
 import { GetWeatherService } from './get-weather.service';
 import { ChildcomponenetComponent } from './childcomponenet/childcomponenet.component';
 import { ApigetComponent } from './apiget/apiget.component';
@@ -27,7 +26,6 @@ import { PostApiComponent } from './post-api/post-api.component';
     HeroDetailComponent,
     MessegesComponent,
     DashboardComponent,
-    WeatherComponent,
     ChildcomponenetComponent,
     ApigetComponent,
     ParentComponent,
@@ -50,10 +48,6 @@ import { PostApiComponent } from './post-api/post-api.component';
     },
     { path: 'getapi', 
     component: ApigetComponent
-    },
-    {
-      path:'weather',
-      component: WeatherComponent
     },
     {
       path:'parent',

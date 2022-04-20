@@ -11,7 +11,11 @@ export class ApigetComponent implements OnInit {
   constructor(private weather:GetWeatherService) {
     weather.getEmployeeInfo().subscribe((data)=>{
       this.employeeInfo=data;
-    });
+    },
+    error=>{
+      console.log(error);
+    }
+    );
    }
    
   ngOnInit(): void {

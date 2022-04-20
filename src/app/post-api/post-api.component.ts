@@ -13,7 +13,11 @@ export class PostApiComponent implements OnInit {
   onSubmit(people:any){
      this.postapiservices.postApi(people).subscribe(data=>{
        this.employee=data;
-     })
+     },
+     error=>{
+       console.log(error);
+     }
+     )
     
   }
 

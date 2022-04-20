@@ -11,6 +11,11 @@ export class FormsComponent implements OnInit {
   constructor() { }
   template:any;
   formdata:any;
+  userData={
+    "name":"",
+     "email":"",
+     "phone":""
+  }
 onSubmit(ele:any){
    this.template=ele;
 }
