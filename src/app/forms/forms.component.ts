@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validator, Validators  } from '@angular/forms';
-
+import { PostapiService } from '../postapi.service';
 @Component({
   selector: 'app-forms',
   templateUrl: './forms.component.html',
@@ -8,7 +8,7 @@ import { FormGroup, FormControl, Validator, Validators  } from '@angular/forms';
 })
 export class FormsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private postapiservice:PostapiService) { }
   template:any;
   formdata:any;
   userData={
@@ -16,14 +16,31 @@ export class FormsComponent implements OnInit {
      "email":"",
      "phone":""
   }
+  tempFormData:any;
+  modFormData:any;
 onSubmit(ele:any){
-   this.template=ele;
+   this.postapiservice.postApi(ele).subscribe(data=>{
+     this.tempFormData=data;
+   },
+   error=>{
+     console.log(error);
+   }
+   );
+}
+modSubmit(){
+  this.postapiservice.postApi(this.formdata.value).subscribe(data=>{
+    this.modFormData=data;
+  },
+  error=>{
+    console.log(error);
+  }
+  );
 }
   ngOnInit(): void {
     this.formdata=new FormGroup({
-      userName: new FormControl("",[Validators.required]),
-      userEmail: new FormControl("", [Validators.required, Validators.email]),
-      userPhone: new FormControl("", [Validators.required, Validators.minLength(8), Validators.maxLength(12)])
+      userName: new FormControl("somesh",[Validators.required]),
+      userEmail: new FormControl("somesh@123", [Validators.required, Validators.email]),
+      userPhone: new FormControl("123456789", [Validators.required, Validators.minLength(8), Validators.maxLength(12)])
     })
   }
 

@@ -13,11 +13,11 @@
      <input type="submit">
    </form>
 </div>
-<div class="output" *ngIf="userInfo.valid">
+<div class="output" *ngIf="tempFormData">
     <h1>Template Form Output</h1>
-    <h2 >Name:  {{userData.name}}</h2>
-    <h2>Email:  {{userData.email}}</h2>
-    <h2>Phone:  {{userData.phone}}</h2>
+    <h2 >Name:  {{tempFormData.userName}}</h2>
+    <h2>Email:  {{tempFormData.userEmail}}</h2>
+    <h2>Phone:  {{tempFormData.userPhone}}</h2>
 </div>
 <div class="template form">
     <h1>Model Driven Form</h1>
@@ -28,12 +28,12 @@
      <input type="email" formControlName="userEmail"  placeholder="Enter Your Name" ><br>
      <label for="">Phone:</label>
      <input type="text" formControlName="userPhone"  minlength="9" maxlength="12" required placeholder="Enter Your Name" ><br>
-     <input type="submit">
+     <input type="submit" (click)="modSubmit()" >
    </form>
 </div>
-<div class="output" *ngIf="formdata.valid">
+<div class="output" *ngIf="modFormData">
     <h1>Model Form Output</h1>
-    <h2 >Name:  {{formdata.value.userName}}</h2>
-    <h2>Email:  {{formdata.value.userEmail}}</h2>
-    <h2>Phone:  {{formdata.value.userPhone}}</h2>
+    <h2 >Name:  {{modFormData.userName}}</h2>
+    <h2>Email:  {{modFormData.userEmail}}</h2>
+    <h2>Phone:  {{modFormData.userPhone}}</h2>
 </div>
