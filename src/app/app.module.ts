@@ -16,6 +16,7 @@ import { ChildcomponenetComponent } from './childcomponenet/childcomponenet.comp
 import { ApigetComponent } from './apiget/apiget.component';
 import { ParentComponent } from './parent/parent.component';
 import { FormsComponent } from './forms/forms.component';
+import { PostApiComponent } from './post-api/post-api.component';
 
 
 
@@ -31,6 +32,7 @@ import { FormsComponent } from './forms/forms.component';
     ApigetComponent,
     ParentComponent,
     FormsComponent,
+    PostApiComponent,
     
   ],
   imports: [
@@ -63,6 +65,11 @@ import { FormsComponent } from './forms/forms.component';
       component: FormsComponent
 
     },
+    {
+      path: 'postapi',
+      component: PostApiComponent
+    }
+
   ])
   ],
   providers: [HeroService, GetWeatherService],
