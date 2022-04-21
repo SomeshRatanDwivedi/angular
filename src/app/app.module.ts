@@ -19,7 +19,7 @@ import { LifecycleHookComponent } from './lifecycle-hook/lifecycle-hook.componen
 import { SendmessageComponent } from './sendmessage/sendmessage.component';
 import { MessageComponent } from './message/message.component';
 import { RecievemessageComponent } from './recievemessage/recievemessage.component';
-
+import { DirectivesComponent } from './directives/directives.component';
 
 
 
@@ -37,7 +37,8 @@ import { RecievemessageComponent } from './recievemessage/recievemessage.compone
     LifecycleHookComponent,
     SendmessageComponent,
     MessageComponent,
-    RecievemessageComponent
+    RecievemessageComponent,
+    DirectivesComponent
  ],
   imports: [
     BrowserModule,
@@ -76,7 +77,12 @@ import { RecievemessageComponent } from './recievemessage/recievemessage.compone
     {
       path: 'message',
       component: SendmessageComponent
-    }
+    },
+    {
+      path: 'directives',
+      component: DirectivesComponent
+    },
+    
 
   ])
   ],

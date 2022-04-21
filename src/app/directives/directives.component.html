@@ -1,0 +1,10 @@
+<div class="parent">
+    <h1>ngStyle directives</h1>
+    <button [ngStyle]="{'color':'red'}">ngStyle option1</button>
+    <button [ngStyle]="addStyle()"  >ngStyle option2</button>
+</div>
+<div class="parent">
+    <h1>ngClass directives</h1>
+    <button [ngClass]="['btn-bold', 'btn-italic', 'btn-green']">ngClass option1</button>
+    <button [ngClass]="{'btn-bold':true, 'btn-italic':false, 'btn-green':true, 'btn-red':true}"  >ngClass option2</button>
+</div>
